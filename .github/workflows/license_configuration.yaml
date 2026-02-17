@@ -1,0 +1,29 @@
+permittedLicenses:
+  - MIT
+  - BSD-3-Clause
+  # - Apache-2.0
+  # - BSD-2-Clause
+  - MIT-Modern-Variant
+
+approvedPackages:
+  unknown-license:
+    - data
+    - ui
+    # - pubspec_lock_parse
+  no-file:
+    - flutter_localizations
+    - flutter_test
+    - flutter_web_plugins
+    # - flutter_driver
+    # - fuchsia_remote_debug_protocol
+    # - integration_test
+  BSL-1.0:
+    - sky_engine
+
+rejectedLicenses:
+  - GPL
+  - AGPL
+  - SSPL
+  - CC
+  - Restrictive BSD
+  - Restrictive MIT

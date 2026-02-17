@@ -19,4 +19,11 @@ jobs:
           deploy-coverage-report: 'github-pages'
           github-token: ${{ secrets.GITHUB_TOKEN }}
           flutter-version: '3.41'
+          license: 'true'
+          test: 'true'
+          analyze: 'true'
+          coverage: 'true'
+          license-fails-on-warnings: 'true'
+          license-fails-on-info: 'true'
+          compatible-licenses-conf-path: '.github/workflows/license_configuration.yaml'
 
