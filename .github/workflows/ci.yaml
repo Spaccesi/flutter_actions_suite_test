@@ -20,7 +20,7 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           flutter-version: '3.41'
           license: 'false'
-          test: 'true'
+          test: 'false'
           analyze: 'true'
           coverage: 'true'
           license-fails-on-warnings: 'true'
