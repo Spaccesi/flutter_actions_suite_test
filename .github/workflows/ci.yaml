@@ -1,0 +1,21 @@
+name: Start Pipeline
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  ci:
+    name: Prepare & Check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v6
+
+      - uses: Spaccesi/flutter-actions-suite
+        with:
+          deploy-coverage-report: 'github-pages'
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
