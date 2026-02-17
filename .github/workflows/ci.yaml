@@ -28,7 +28,7 @@ jobs:
           compatible-licenses-conf-path: '.github/workflows/license_configuration.yaml'
       - uses: Spaccesi/flutter-actions-suite/release/build/web@main
       
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: coverage-report
           path: build/web
