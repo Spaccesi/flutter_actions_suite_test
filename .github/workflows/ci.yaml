@@ -19,11 +19,17 @@ jobs:
           deploy-coverage-report: 'github-pages'
           github-token: ${{ secrets.GITHUB_TOKEN }}
           flutter-version: '3.41'
-          license: 'true'
+          license: 'false'
           test: 'true'
           analyze: 'true'
           coverage: 'true'
           license-fails-on-warnings: 'true'
           license-fails-on-info: 'true'
           compatible-licenses-conf-path: '.github/workflows/license_configuration.yaml'
+      - uses: Spaccesi/flutter-actions-suite/release/build/web@main
+      
+      - uses: actions/upload-artifact@v3
+        with:
+          name: coverage-report
+          path: build/web
 
