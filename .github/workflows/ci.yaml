@@ -14,8 +14,8 @@ jobs:
       - uses: Spaccesi/flutter-actions-suite@main
         with:
           flutter-version: '3.41'
-          channel: 'stable'
-          run-tests: 'true'
+          flutter-channel: 'stable'
+          run-test: 'true'
           run-analyze: 'true'
           run-license: 'true'
           run-coverage: 'true'
@@ -32,8 +32,8 @@ jobs:
       - uses: Spaccesi/flutter-actions-suite@main
         with:
           flutter-version: '3.41'
-          channel: 'stable'
-          run-tests: 'false'
+          flutter-channel: 'stable'
+          run-test: 'false'
           run-analyze: 'false'
           run-license: 'false'
           run-coverage: 'false'
@@ -51,8 +51,8 @@ jobs:
       - uses: Spaccesi/flutter-actions-suite@main
         with:
           flutter-version: '3.41'
-          channel: 'stable'
-          run-tests: 'false'
+          flutter-channel: 'stable'
+          run-test: 'false'
           run-analyze: 'false'
           run-license: 'false'
           run-coverage: 'false'
@@ -70,8 +70,8 @@ jobs:
       - uses: Spaccesi/flutter-actions-suite@main
         with:
           flutter-version: '3.41'
-          channel: 'stable'
-          run-tests: 'false'
+          flutter-channel: 'stable'
+          run-test: 'false'
           run-analyze: 'false'
           run-license: 'false'
           run-coverage: 'false'
