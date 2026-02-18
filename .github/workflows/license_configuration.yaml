@@ -1,9 +1,10 @@
 permittedLicenses:
   - MIT
   - BSD-3-Clause
-  # - Apache-2.0
-  # - BSD-2-Clause
+  - Apache-2.0
+  - BSD-2-Clause
   - MIT-Modern-Variant
+  - Zlib
 
 approvedPackages:
   unknown-license:
