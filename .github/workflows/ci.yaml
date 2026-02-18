@@ -7,29 +7,80 @@ on:
   workflow_dispatch:
 
 jobs:
-  ci:
-    name: Prepare & Check
+  web:
+    name: Web
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v6
-
       - uses: Spaccesi/flutter-actions-suite@main
         with:
-          deploy-coverage-report: 'github-pages'
-          github-token: ${{ secrets.GITHUB_TOKEN }}
           flutter-version: '3.41'
-          license: 'false'
-          test: 'false'
-          analyze: 'true'
-          coverage: 'true'
-          license-fails-on-warnings: 'true'
-          license-fails-on-info: 'true'
-          compatible-licenses-conf-path: '.github/workflows/license_configuration.yaml'
-      - uses: Spaccesi/flutter-actions-suite/release/build/web@main
-      
-      - uses: actions/upload-artifact@v4
+          channel: 'stable'
+          run-tests: 'true'
+          run-analyze: 'true'
+          run-license: 'true'
+          run-coverage: 'true'
+          analyze-fails-if-infos: 'false'
+          analyze-fails-if-warnings: 'false'
+          compatible-licenses-conf-path: '.github/workflows/compatible_licenses.yaml'
+          test-create-coverage-badge: 'true'
+          build-platform: 'web'
+          build-mode: 'debug'
+  android:
+    name: Android
+    runs-on: ubuntu-latest
+    steps:
+      - uses: Spaccesi/flutter-actions-suite@main
         with:
-          name: coverage-report
-          path: build/web
+          flutter-version: '3.41'
+          channel: 'stable'
+          run-tests: 'false'
+          run-analyze: 'false'
+          run-license: 'false'
+          run-coverage: 'false'
+          analyze-fails-if-infos: 'false'
+          analyze-fails-if-warnings: 'false'
+          compatible-licenses-conf-path: '.github/workflows/compatible_licenses.yaml'
+          test-create-coverage-badge: 'false'
+          build-platform: 'android'
+          build-mode: 'debug'
+
+  linux:
+    name: Linux
+    runs-on: ubuntu-latest
+    steps:
+      - uses: Spaccesi/flutter-actions-suite@main
+        with:
+          flutter-version: '3.41'
+          channel: 'stable'
+          run-tests: 'false'
+          run-analyze: 'false'
+          run-license: 'false'
+          run-coverage: 'false'
+          analyze-fails-if-infos: 'false'
+          analyze-fails-if-warnings: 'false'
+          compatible-licenses-conf-path: '.github/workflows/compatible_licenses.yaml'
+          test-create-coverage-badge: 'false'
+          build-platform: 'linux'
+          build-mode: 'debug'
+        
+  windows:
+    name: Windows
+    runs-on: windows-latest
+    steps:
+      - uses: Spaccesi/flutter-actions-suite@main
+        with:
+          flutter-version: '3.41'
+          channel: 'stable'
+          run-tests: 'false'
+          run-analyze: 'false'
+          run-license: 'false'
+          run-coverage: 'false'
+          analyze-fails-if-infos: 'false'
+          analyze-fails-if-warnings: 'false'
+          compatible-licenses-conf-path: '.github/workflows/compatible_licenses.yaml'
+          test-create-coverage-badge: 'false'
+          build-platform: 'windows'
+          build-mode: 'debug'
+
+          
 
