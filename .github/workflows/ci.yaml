@@ -11,6 +11,7 @@ jobs:
     name: Web
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
       - uses: Spaccesi/flutter-actions-suite@main
         with:
           flutter-version: '3.41'
@@ -29,6 +30,7 @@ jobs:
     name: Android
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
       - uses: Spaccesi/flutter-actions-suite@main
         with:
           flutter-version: '3.41'
@@ -48,6 +50,7 @@ jobs:
     name: Linux
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
       - uses: Spaccesi/flutter-actions-suite@main
         with:
           flutter-version: '3.41'
@@ -67,6 +70,7 @@ jobs:
     name: Windows
     runs-on: windows-latest
     steps:
+      - uses: actions/checkout@v4
       - uses: Spaccesi/flutter-actions-suite@main
         with:
           flutter-version: '3.41'
